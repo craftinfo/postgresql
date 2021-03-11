@@ -29,7 +29,7 @@ If we had set the address to "postgresql" the environment variable would be `POS
 
 ## set (tweak)
 
-The client library we are interested in, is called "libpq.q" instead of "libpostgres.a". 
+The client library we are interested in, is called "libpq.a" instead of "libpostgres.a". 
 And the header is  `<libpq-fe.h>` and not `<postgres/postgres.h>` as the default name would
 be assumed from the address. So we tweak this.
 
