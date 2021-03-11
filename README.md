@@ -1,6 +1,9 @@
 # postgresql
 
-How to add postgresql (libpq) to a mulle-sde project
+#### How to add postgresql (libpq) to a mulle-sde project.
+
+This repository just contains instructions how to add postgresql. It does not
+need a craftinfo and therefore has none.
 
 ## mulle-sde dependency
 
