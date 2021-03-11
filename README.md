@@ -2,8 +2,8 @@
 
 #### How to add postgresql (libpq) to a mulle-sde project.
 
-This repository just contains instructions how to add postgresql. It does not
-need a craftinfo and therefore has none.
+This repository just contains instructions how to add [postgresql](https://www.postgresql.org/). It does not
+need a *craftinfo* and therefore has none.
 
 ## mulle-sde dependency
 
@@ -28,8 +28,10 @@ If we had set the address to "postgresql" the environment variable would be `POS
 
 
 ## set (tweak)
-The client library we are interested in, is not called postgreql and neither is the header, so we note this.
-It is important for **cmake** find the library, otherwise **cmake** will be unhappy.
+
+The client library we are interested in, is called "libpq.q" instead of "libpostgres.a". 
+And the header is  `<libpq-fe.h>` and not `<postgres/postgres.h>` as the default name would
+be assumed from the address. So we tweak this.
 
 ```
 mulle-sde dependency set postgres aliases pq
@@ -38,8 +40,8 @@ mulle-sde dependency set postgres include libpq-fe.h
 
 ### mark
 
-As postgresql uses `configure` and make it doesn't partake in the multi-phase compilation assumed
-by `mulle-sde` so we note this.
+As postgresql uses `configure` and `make`, it doesn't partake in the multi-phase compilation 
+assumed by `mulle-sde` so we note this.
 
 ```
 mulle-sde dependency mark postgres singlephase
@@ -51,17 +53,19 @@ it private (public is the default):
 mulle-sde dependency unmark postgres public
 ```
 
-We could remove the header from automatic inclusion with
-
-```
-mulle-sde dependency unmark postgres header
-```
-
-We could remove the library from automatic linking with
-
-```
-mulle-sde dependency unmark postgres link
-```
+> #### Note
+> 
+> We could remove the header from automatic inclusion with
+> 
+> ```
+> mulle-sde dependency unmark postgres header
+> ```
+> 
+> We could remove the library from automatic linking with
+> 
+> ```
+> mulle-sde dependency unmark postgres link
+> ```
 
 
 
