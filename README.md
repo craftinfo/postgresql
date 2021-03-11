@@ -26,7 +26,7 @@ If we had set the address to "postgresql" the environment variable would be `POS
 
 ## set (tweak)
 The client library we are interested in, is not called postgreql and neither is the header, so we note this.
-It is important to find the library, otherwise **cmake** will be unhappy.
+It is important for **cmake** find the library, otherwise **cmake** will be unhappy.
 
 ```
 mulle-sde dependency set postgres aliases pq
@@ -41,6 +41,12 @@ by `mulle-sde` so we note this.
 ```
 mulle-sde dependency mark postgres singlephase
 ```
+We may not want to expose the postgres headers to consumers of our library, so we make
+it private (public is the default):
+
+```
+mulle-sde dependency unmark postgres public
+```
 
 We could remove the header from automatic inclusion with
 
@@ -48,12 +54,13 @@ We could remove the header from automatic inclusion with
 mulle-sde dependency unmark postgres header
 ```
 
-We may not want to expose the postgres headers to consumers of our library, so we make
-it private (public is the default):
+We could remove the library from automatic linking with
 
 ```
-mulle-sde dependency unmark postgres public
+mulle-sde dependency unmark postgres link
 ```
+
+
 
 ## Edit CMakeLists.txt
 
