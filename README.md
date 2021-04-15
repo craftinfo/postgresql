@@ -67,7 +67,25 @@ mulle-sde dependency unmark postgres public
 > mulle-sde dependency unmark postgres link
 > ```
 
+#### Changing configure options
 
+```
+mulle-sde dependency set postgres CONFIGUREFLAGS --with-openssl
+```
+
+#### If we want to build `fat` for macOS
+
+Usually one would set this in the environment CFLAGS of the top most project: 
+
+```
+mulle-sde environment set CFLAGS "-arch x86_64 -arch arm64"
+```
+
+But one can also change this on the dependency itself
+
+```
+mulle-sde dependency craftinfo --os darwin set postgres CFLAGS "-arch x86_64 -arch arm64"
+```
 
 ## Edit CMakeLists.txt
 
