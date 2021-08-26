@@ -101,10 +101,10 @@ include( Files)
 #
 # Add this
 #
-include_directories( "${DEPENDENCY_DIR}/${CMAKE_BUILD_TYPE}/include/postgresql/internal")
-include_directories( "${DEPENDENCY_DIR}/include/postgresql/internal")
-include_directories( "${DEPENDENCY_DIR}/${CMAKE_BUILD_TYPE}/include/postgresql/server")
-include_directories( "${DEPENDENCY_DIR}/include/postgresql/server")
+include_directories( SYSTEM "${DEPENDENCY_DIR}/${CMAKE_BUILD_TYPE}/include/postgresql/internal")
+include_directories( SYSTEM "${DEPENDENCY_DIR}/include/postgresql/internal")
+include_directories( SYSTEM "${DEPENDENCY_DIR}/${CMAKE_BUILD_TYPE}/include/postgresql/server")
+include_directories( SYSTEM "${DEPENDENCY_DIR}/include/postgresql/server")
 ...
 ```
 
