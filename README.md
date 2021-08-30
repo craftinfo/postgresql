@@ -70,7 +70,7 @@ mulle-sde dependency unmark postgres public
 #### Changing configure options
 
 ```
-mulle-sde dependency set postgres CONFIGUREFLAGS --with-openssl
+mulle-sde dependency craftinfo set postgres CONFIGUREFLAGS --with-openssl
 ```
 
 #### If we want to build `fat` for macOS
