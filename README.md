@@ -80,7 +80,7 @@ mulle-sde dependency craftinfo set postgres CONFIGUREFLAGS "--with-openssl --wit
 Usually one would set this in the environment CFLAGS of the top most project: 
 
 ```
-mulle-sde environment set CFLAGS "-arch x86_64 -arch arm64"
+mulle-sde environment --os darwin set CFLAGS "-arch x86_64 -arch arm64"
 ```
 
 But one can also change this on the dependency itself
