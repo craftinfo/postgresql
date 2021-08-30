@@ -69,8 +69,10 @@ mulle-sde dependency unmark postgres public
 
 #### Changing configure options
 
+OpenSSL is needed for login. The readline library we can live without.
+
 ```
-mulle-sde dependency craftinfo set postgres CONFIGUREFLAGS --with-openssl
+mulle-sde dependency craftinfo set postgres CONFIGUREFLAGS "--with-openssl --without-readline"
 ```
 
 #### If we want to build `fat` for macOS
